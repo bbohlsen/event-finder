@@ -14,3 +14,5 @@ npm install react
 npm install react-router-dom
 npm install react-toastify
 npm install axios
+
+To test the code run: 'npm start' in the event-finder folder
