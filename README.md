@@ -18,5 +18,5 @@ npm install axios
 To test the code run: 'npm start' in the event-finder folder
 
 To use the build enter the following commands in the terminal(Preferably VSCode):
-npm install -g serve
+npm install -g serve,
 serve -s build
