@@ -41,7 +41,6 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
         />
         <input
           type="text"
-          name="eventtime"
           value={time}
           placeholder="Time"
           onChange={(e) => setTime(e.target.value)}
