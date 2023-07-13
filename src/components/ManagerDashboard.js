@@ -4,6 +4,7 @@ import { EventContext } from './EventContext';
 const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
   const { events, addEvent, deleteEvent } = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
+  const [time, setTime] = useState('');
 
   const handleAddEvent = () => {
     if (newEvent) {
@@ -11,6 +12,7 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
       setNewEvent('');
     }
   };
+
 
   const handleDeleteEvent = (index) => {
     deleteEvent(index);
@@ -23,7 +25,8 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
       <ul>
         {events.map((event, index) => (
           <li key={index}>
-            {event}
+            {event} {time}
+            
             <button onClick={() => handleDeleteEvent(index)}>Delete</button>
           </li>
         ))}
@@ -33,7 +36,14 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
         <input
           type="text"
           value={newEvent}
+          Placeholder="Event Name"
           onChange={(e) => setNewEvent(e.target.value)}
+        />
+        <input
+          type="text"
+          value={time}
+          placeholder="Time"
+          onChange={(e) => setTime(e.target.value)}
         />
         <button onClick={handleAddEvent}>Add Event</button>
       </div>
