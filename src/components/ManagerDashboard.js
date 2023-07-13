@@ -10,7 +10,6 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
     if (newEvent) {
       addEvent(newEvent);
       setNewEvent('');
-      
       setTime('');
     }
   };
