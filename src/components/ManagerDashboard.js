@@ -2,16 +2,16 @@ import React, { useContext, useState } from 'react';
 import { EventContext } from './EventContext';
 
 const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
-  const { events, addEvent, deleteEvent } = useContext(EventContext);
+  const {events, addEvent, deleteEvent} = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
   const [time, setTime] = useState('');
+  
 
   const handleAddEvent = () => {
-    if (newEvent) {
-      addEvent(newEvent);
-      setNewEvent('');
-      setTime('');
-    }
+    addEvent(`${newEvent} - ${time}`)
+    setNewEvent('');
+    setTime('');
+    
   };
 
 
@@ -23,10 +23,10 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
     <div>
       <h2>Manager Dashboard</h2>
       <h3>Events:</h3>
-      <ul>
+      <ul class="Events">
         {events.map((event, index) => (
           <li key={index}>
-            {event} {time}
+            {event} 
             
             <button onClick={() => handleDeleteEvent(index)}>Delete</button>
           </li>
