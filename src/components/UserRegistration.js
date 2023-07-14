@@ -122,6 +122,7 @@ const UserRegistration = ({ onRegister }) => {
               value={adminKey}
               onChange={(e) => setAdminKey(e.target.value)}
             />
+            <Link to="/Request.js">Request Key</Link>
           </label>
         </div>
       )}

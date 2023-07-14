@@ -12,6 +12,9 @@ const LogIn = ({ onSignIn }) => {
     if (username && password) {
       const userData = { username, password };
       loginUser(userData);
+      setUsername("");
+      setPassword("");
+
     }
   };
 
