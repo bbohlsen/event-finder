@@ -5,17 +5,6 @@
     margin: 10% auto 0;
 }
 
-.Content > .Header {
-    background: #ffffff url(../assets/bk.png) center center no-repeat;
-    width: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
 .Content > .Header > .Layer {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: #fff;
@@ -30,7 +19,7 @@
 }
 
 .Content > .Body {
-    background-color: #ffffff;
+    background-color: #ab0707;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -79,7 +68,7 @@
     display: block;
     font-size: 17px;
     padding: 5px;
-    color: #000;
+    color: #d02d2d;
 }
 .eventFiled{
     width: 100%;
@@ -89,14 +78,14 @@
 }
 .eventTime{
     width: 30%;
-    border: 1px solid #ddd;
+    border: 1px solid #970000;
     border-left: none;
     border-right: none;
 }
 .Content > .Body > .AddEvent .submitBtn {
-    width: 25%;
+    width: 2%;
     border-left: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #941c1c;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     border-top-right-radius: 3px;
@@ -104,6 +93,14 @@
     background-color: #dddddd;
     cursor: pointer;
 }
+
+body {
+    background-color: #b41a1a;
+    color: rgb(206, 29, 29);
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
 
 input[type="text"], button { 
     outline: none;

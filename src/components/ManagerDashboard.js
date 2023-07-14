@@ -8,7 +8,7 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
   
 
   const handleAddEvent = () => {
-    addEvent(`${newEvent} - ${time}`)
+    addEvent(`${newEvent} - ${time} -`)
     setNewEvent('');
     setTime('');
     
@@ -46,6 +46,7 @@ const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
           placeholder="Time"
           onChange={(e) => setTime(e.target.value)}
         />
+        
         <button onClick={handleAddEvent}>Add Event</button>
       </div>
     </div>
