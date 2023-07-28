@@ -1,11 +1,22 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
-// Create the event context
 export const EventContext = createContext();
 
 // Create a provider component that wraps the app
 export const EventProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem('events');
+    if (storedEvents) {
+      setEvents(JSON.parse(storedEvents));
+    }
+  }, []);
+
+  const saveEvents = (updatedEvents) => {
+    setEvents(updatedEvents);
+    localStorage.setItem('events', JSON.stringify(updatedEvents));
+  };
 
   const addEvent = (event) => {
     setEvents([...events, event]);
@@ -18,8 +29,10 @@ export const EventProvider = ({ children }) => {
   };
 
   return (
-    <EventContext.Provider value={{ events, addEvent, deleteEvent }}>
+    <EventContext.Provider value={{ events, addEvent, deleteEvent, saveEvents }}>
       {children}
     </EventContext.Provider>
   );
 }
+
+export default EventProvider;

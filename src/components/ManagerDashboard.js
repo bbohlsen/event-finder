@@ -1,48 +1,49 @@
 import React, { useContext, useState } from 'react';
 import { EventContext } from './EventContext';
 
-const ManagerDashboard = ({onDeleteEvent, onAddEvent}) => {
-  const {events, addEvent, deleteEvent} = useContext(EventContext);
+const ManagerDashboard = () => {
+  const { events, saveEvents } = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
   const [time, setTime] = useState('');
   const [city, setCity] = useState('');
-  
 
   const handleAddEvent = () => {
-    addEvent(`${newEvent} - ${time} - ${city}`)
+    const updatedEvents = [...events, `${newEvent} - ${time} - ${city}`];
+    saveEvents(updatedEvents);
     setNewEvent('');
     setTime('');
     setCity('');
   };
 
-
   const handleDeleteEvent = (index) => {
-    deleteEvent(index);
+    const updatedEvents = [...events];
+    updatedEvents.splice(index, 1);
+    saveEvents(updatedEvents);
   };
 
   return (
     <div>
       <h2>Manager Dashboard</h2>
       <h3>Events:</h3>
-      <ul class="Events">
+      <ul className="Events">
         {events.map((event, index) => (
           <li key={index}>
-            {event} 
-            
+            {event}
+
             <button onClick={() => handleDeleteEvent(index)}>Delete</button>
           </li>
         ))}
       </ul>
       <div>
         <h3>Add Event:</h3>
-        <input 
+        <input
           required
           type="text"
           value={newEvent}
-          Placeholder="Event Name"
+          placeholder="Event Name"
           onChange={(e) => setNewEvent(e.target.value)}
         />
-        <input 
+        <input
           required
           type="text"
           value={time}

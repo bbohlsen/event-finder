@@ -3,7 +3,6 @@ import { EventContext } from './EventContext';
 
 function HomePage() {
   const { events } = useContext(EventContext);
-  const { time } = useContext(EventContext);
 
   return (
     <div>
@@ -11,7 +10,7 @@ function HomePage() {
       <h3>Events:</h3>
       <ul>
         {events.map((event, index) => (
-          <li key={index}>{event} {time}</li>
+          <li key={index}>{event}</li>
         ))}
       </ul>
     </div>
