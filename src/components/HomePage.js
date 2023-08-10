@@ -1,6 +1,13 @@
 import React, { useContext } from 'react';
 import { EventContext } from './EventContext';
 
+import './styles.css';
+
+/**
+ * Homepage that shows the list of events.
+ * 
+ * @returns {JSX.Element} - Rendered Homepage component.
+ */
 function HomePage() {
   const { events } = useContext(EventContext);
 

@@ -1,12 +1,22 @@
 import React, { useContext, useState } from 'react';
 import { EventContext } from './EventContext';
 
+import './styles.css';
+
+/**
+ * Manager Dashboard allows the user to add or delete events, along with event name, time, and city parameters.
+ * 
+ * @returns {JSX.Element} - Rendered Manager Dashboard.
+ */
 const ManagerDashboard = () => {
   const { events, saveEvents } = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
   const [time, setTime] = useState('');
   const [city, setCity] = useState('');
 
+  /**
+   * Handles adding a new event to the list
+   */
   const handleAddEvent = () => {
     const updatedEvents = [...events, `${newEvent} - ${time} - ${city}`];
     saveEvents(updatedEvents);
@@ -15,6 +25,11 @@ const ManagerDashboard = () => {
     setCity('');
   };
 
+  /**
+   * Deletes an event from the list based on index.
+   * 
+   * @param {number} index - The index number of the event. 
+   */
   const handleDeleteEvent = (index) => {
     const updatedEvents = [...events];
     updatedEvents.splice(index, 1);
