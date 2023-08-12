@@ -54,8 +54,11 @@ export const EventProvider = ({ children }) => {
     setEvents(updatedEvents);
   };
 
+
+  
+
   return (
-    <EventContext.Provider value={{ events, addEvent, deleteEvent, saveEvents }}>
+    <EventContext.Provider value={{ events, addEvent, deleteEvent, saveEvents}}>
       {children}
     </EventContext.Provider>
   );

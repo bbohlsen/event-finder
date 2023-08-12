@@ -8,17 +8,23 @@ import './styles.css';
  * 
  * @returns {JSX.Element} - Rendered Manager Dashboard.
  */
+
+
 const ManagerDashboard = () => {
   const { events, saveEvents } = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
   const [time, setTime] = useState('');
   const [city, setCity] = useState('');
+  var [attendance, setAttendance] = useState(0);
+
+  
+
 
   /**
    * Handles adding a new event to the list
    */
   const handleAddEvent = () => {
-    const updatedEvents = [...events, `${newEvent} - ${time} - ${city}`];
+    const updatedEvents = [...events, `${newEvent} - ${time} - ${city} Attendance: ${attendance}`];
     saveEvents(updatedEvents);
     setNewEvent('');
     setTime('');
