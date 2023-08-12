@@ -1,13 +1,18 @@
-Release Notes
+Release Notes 
 
-Milestone 2:
-Still need to develop CSS, but we have most of our inputs developed. The login information is being saved in the session but we need to send it to a database instead. Started a new page for requesting access.
+Milestone 4:
 
-There are now two more boxes to input times and city. Right now you can input whatever you would like into the text boxes, but we would like to limit this to Omaha, Lincoln, and Council Bluffs, either by text input exception or using buttons. 
+For Milestone 4 we added persistence to the web application. We also added CSS to make the web application more visually appealing. Finally, we added a going to and changed mind button with a counter that indicates how many people are going to an event.
 
-The Register page which allows the user to register a guest or manager account. This works, but the backend server has not been installed so the app does not remember the credentials. (Can be improved in Milestone 3)
+ 
 
-The Login page which should allow users to login, however, the backend has yet to be installed and can be improved in Milestone 3.
+Functions:
+
+Add and delete event(along with parameters like event name, time, city)
+
+Homepage lists the event with a going to and changed mind button that has a counter
+
+Pseudo registration and login
 
 Libraries Installed:
 npm install react
