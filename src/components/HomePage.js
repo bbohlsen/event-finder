@@ -13,17 +13,17 @@ function HomePage() {
 
   const { events, saveEvents } = useContext(EventContext);
   const [newEvent, setNewEvent] = useState('');
-  var [attendance, setAttendance] = useState(0);
+  const [attendance, setAttendance] = useState(0);
+  
 
-  const goingToEvent = (index) => {
-    const updatedEvents = [...events];
-    updatedEvents[index] = {
-      ...updatedEvents[index],
-      attendance: updatedEvents[index].attendance + 1,
-    };
-    saveEvents(updatedEvents);
+  const goingToEvent = () => {
+    setAttendance(attendance => attendance + 1)
   };
 
+  const notGoing = () => {
+    if (attendance > 0){
+    setAttendance(attendance => attendance - 1)}
+  }
 
 
   
@@ -35,8 +35,10 @@ function HomePage() {
       <ul>
         {events.map((event, index) => (
           <li key={index}>{event}
-          <button onClick={() => goingToEvent(index)}>going</button>
-          
+          <button onClick={goingToEvent}>Going</button>
+          <button onClick={notGoing}>Changed Mind</button>
+          <p>Attending: {attendance}</p>
+          <p></p>
           </li>
         ))}
       </ul>

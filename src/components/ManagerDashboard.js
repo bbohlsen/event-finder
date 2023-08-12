@@ -24,7 +24,7 @@ const ManagerDashboard = () => {
    * Handles adding a new event to the list
    */
   const handleAddEvent = () => {
-    const updatedEvents = [...events, `${newEvent} - ${time} - ${city} Attendance: ${attendance}`];
+    const updatedEvents = [...events, `${newEvent} - ${time} - ${city}`];
     saveEvents(updatedEvents);
     setNewEvent('');
     setTime('');
